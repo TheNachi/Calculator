@@ -78,4 +78,23 @@ class CalculatorViewModel {
             return String(format: "%.10f", result)
         }
     }
+    
+    func checkForOtherCharacter(value: String) -> Bool {
+        let specialCharacters = ["₿", "sin", "cos"]
+        if specialCharacters.contains(value) {
+            return true
+        }
+        return false
+    }
+    
+    func calculateOtherFunctions(value: String) {
+        switch value {
+        case "sin":
+            print("sin")
+        case "cos":
+            print("cos")
+        default:
+            return
+        }
+    }
 }

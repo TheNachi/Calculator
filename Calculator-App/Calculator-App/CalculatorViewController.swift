@@ -45,7 +45,11 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         if let numValue = sender.currentTitle {
-            addToWorkings(value: numValue)
+            if viewModel.checkForOtherCharacter(value: numValue) {
+                
+            } else {
+                addToWorkings(value: numValue)
+            }
         }
     }
     
